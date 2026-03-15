@@ -24,12 +24,7 @@ struct MenuBarView: View {
         Divider()
 
         Button("Settings…") {
-            if #available(macOS 14.0, *) {
-                NSApp.activate()
-            } else {
-                NSApp.activate(ignoringOtherApps: true)
-            }
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+            appState.openSettings()
         }
 
         Button("Quit") {
