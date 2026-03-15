@@ -35,6 +35,7 @@ Accessibility (AXUIElement) → Screen Detection → Snap Calculator (pure geome
 - `SnapMyWindows/Shortcuts/ShortcutNames.swift` — KeyboardShortcuts definitions
 - `SnapMyWindows/Shortcuts/ShortcutRegistrar.swift` — Hotkey → action wiring
 - `SnapMyWindows/UI/MenuBarView.swift` — Menu bar dropdown
+- `SnapMyWindows/UI/SettingsView.swift` — Settings window with shortcut recorders + launch at login
 
 ## Key Constraints
 - **No sandbox** — accessibility APIs require it
@@ -53,3 +54,14 @@ Accessibility (AXUIElement) → Screen Detection → Snap Calculator (pure geome
 | Bottom Right | `Cmd+Opt+K` |
 | Maximize | `Cmd+Opt+Return` |
 | Center | `Cmd+Opt+C` |
+| Left Third | `Cmd+Opt+D` |
+| Center Third | `Cmd+Opt+F` |
+| Right Third | `Cmd+Opt+G` |
+| Left Two Thirds | `Cmd+Opt+E` |
+| Right Two Thirds | `Cmd+Opt+T` |
+
+## Release Build
+```bash
+./scripts/build-release.sh
+```
+Outputs `build/SnapMyWindows.app` and `build/SnapMyWindows.dmg`.
