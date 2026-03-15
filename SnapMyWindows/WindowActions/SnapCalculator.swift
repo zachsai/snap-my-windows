@@ -29,6 +29,16 @@ enum SnapCalculator {
             let cx = x + (w - current.width) / 2
             let cy = y + (h - current.height) / 2
             return CGRect(x: cx, y: cy, width: current.width, height: current.height)
+        case .leftThird:
+            return CGRect(x: x, y: y, width: w / 3, height: h)
+        case .centerThird:
+            return CGRect(x: x + w / 3, y: y, width: w / 3, height: h)
+        case .rightThird:
+            return CGRect(x: x + 2 * w / 3, y: y, width: w / 3, height: h)
+        case .leftTwoThirds:
+            return CGRect(x: x, y: y, width: 2 * w / 3, height: h)
+        case .rightTwoThirds:
+            return CGRect(x: x + w / 3, y: y, width: 2 * w / 3, height: h)
         }
     }
 }

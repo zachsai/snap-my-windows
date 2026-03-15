@@ -9,4 +9,9 @@ extension KeyboardShortcuts.Name {
     static let snapBottomRight = Self("snapBottomRight", default: .init(.k, modifiers: [.command, .option]))
     static let snapMaximize = Self("snapMaximize", default: .init(.return, modifiers: [.command, .option]))
     static let snapCenter = Self("snapCenter", default: .init(.c, modifiers: [.command, .option]))
+    static let snapLeftThird = Self("snapLeftThird", default: .init(.d, modifiers: [.command, .option]))
+    static let snapCenterThird = Self("snapCenterThird", default: .init(.f, modifiers: [.command, .option]))
+    static let snapRightThird = Self("snapRightThird", default: .init(.g, modifiers: [.command, .option]))
+    static let snapLeftTwoThirds = Self("snapLeftTwoThirds", default: .init(.e, modifiers: [.command, .option]))
+    static let snapRightTwoThirds = Self("snapRightTwoThirds", default: .init(.t, modifiers: [.command, .option]))
 }

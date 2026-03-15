@@ -10,5 +10,10 @@ enum ShortcutRegistrar {
         KeyboardShortcuts.onKeyUp(for: .snapBottomRight) { WindowSnapper.snap(.bottomRight) }
         KeyboardShortcuts.onKeyUp(for: .snapMaximize) { WindowSnapper.snap(.maximize) }
         KeyboardShortcuts.onKeyUp(for: .snapCenter) { WindowSnapper.snap(.center) }
+        KeyboardShortcuts.onKeyUp(for: .snapLeftThird) { WindowSnapper.snap(.leftThird) }
+        KeyboardShortcuts.onKeyUp(for: .snapCenterThird) { WindowSnapper.snap(.centerThird) }
+        KeyboardShortcuts.onKeyUp(for: .snapRightThird) { WindowSnapper.snap(.rightThird) }
+        KeyboardShortcuts.onKeyUp(for: .snapLeftTwoThirds) { WindowSnapper.snap(.leftTwoThirds) }
+        KeyboardShortcuts.onKeyUp(for: .snapRightTwoThirds) { WindowSnapper.snap(.rightTwoThirds) }
     }
 }

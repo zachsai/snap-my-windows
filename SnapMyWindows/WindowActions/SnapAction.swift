@@ -9,6 +9,11 @@ enum SnapAction: String, CaseIterable, Identifiable {
     case bottomRight
     case maximize
     case center
+    case leftThird
+    case centerThird
+    case rightThird
+    case leftTwoThirds
+    case rightTwoThirds
 
     var id: String { rawValue }
 
@@ -22,6 +27,11 @@ enum SnapAction: String, CaseIterable, Identifiable {
         case .bottomRight: return "Bottom Right"
         case .maximize: return "Maximize"
         case .center: return "Center"
+        case .leftThird: return "Left Third"
+        case .centerThird: return "Center Third"
+        case .rightThird: return "Right Third"
+        case .leftTwoThirds: return "Left Two Thirds"
+        case .rightTwoThirds: return "Right Two Thirds"
         }
     }
 }

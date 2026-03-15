@@ -50,6 +50,11 @@ private extension SnapAction {
         case .bottomRight: return "k"
         case .maximize: return .return
         case .center: return "c"
+        case .leftThird: return "d"
+        case .centerThird: return "f"
+        case .rightThird: return "g"
+        case .leftTwoThirds: return "e"
+        case .rightTwoThirds: return "t"
         }
     }
 

@@ -51,6 +51,33 @@ final class SnapCalculatorTests: XCTestCase {
         XCTAssertEqual(result, visibleFrame)
     }
 
+    // MARK: - Thirds
+
+    func testLeftThird() {
+        let result = SnapCalculator.calculate(action: .leftThird, visibleFrame: visibleFrame)
+        XCTAssertEqual(result, CGRect(x: 0, y: 25, width: 640, height: 1055))
+    }
+
+    func testCenterThird() {
+        let result = SnapCalculator.calculate(action: .centerThird, visibleFrame: visibleFrame)
+        XCTAssertEqual(result, CGRect(x: 640, y: 25, width: 640, height: 1055))
+    }
+
+    func testRightThird() {
+        let result = SnapCalculator.calculate(action: .rightThird, visibleFrame: visibleFrame)
+        XCTAssertEqual(result, CGRect(x: 1280, y: 25, width: 640, height: 1055))
+    }
+
+    func testLeftTwoThirds() {
+        let result = SnapCalculator.calculate(action: .leftTwoThirds, visibleFrame: visibleFrame)
+        XCTAssertEqual(result, CGRect(x: 0, y: 25, width: 1280, height: 1055))
+    }
+
+    func testRightTwoThirds() {
+        let result = SnapCalculator.calculate(action: .rightTwoThirds, visibleFrame: visibleFrame)
+        XCTAssertEqual(result, CGRect(x: 640, y: 25, width: 1280, height: 1055))
+    }
+
     // Test with an offset screen (e.g., secondary monitor)
     func testLeftHalfOnOffsetScreen() {
         let offsetFrame = CGRect(x: 1920, y: 0, width: 2560, height: 1440)
