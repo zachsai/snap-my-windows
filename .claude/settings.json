@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodegen*)",
+      "Bash(xcodebuild*)",
+      "Bash(git*)",
+      "Bash(open*)",
+      "Bash(ls*)",
+      "Bash(which*)",
+      "Bash(brew*)"
+    ]
+  }
+}
