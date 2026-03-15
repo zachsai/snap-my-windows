@@ -6,6 +6,8 @@ struct MenuBarView: View {
 
     var body: some View {
         if !appState.isAccessibilityGranted {
+            Text("Snap My Windows needs Accessibility\naccess to move and resize windows.")
+                .font(.caption)
             Button("Grant Accessibility Access…") {
                 AccessibilityChecker.promptIfNeeded()
             }
@@ -20,6 +22,15 @@ struct MenuBarView: View {
         }
 
         Divider()
+
+        Button("Settings…") {
+            if #available(macOS 14.0, *) {
+                NSApp.activate()
+            } else {
+                NSApp.activate(ignoringOtherApps: true)
+            }
+            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        }
 
         Button("Quit") {
             NSApplication.shared.terminate(nil)
