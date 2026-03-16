@@ -1,6 +1,6 @@
 name: SnapMyWindows
 options:
-  bundleIdPrefix: com.snapmywindows
+  bundleIdPrefix: net.zachsai
   createIntermediateGroups: true
   deploymentTarget:
     macOS: "13.0"
@@ -20,6 +20,7 @@ targets:
       - package: KeyboardShortcuts
     settings:
       CODE_SIGN_IDENTITY: "-"
+      DEVELOPMENT_TEAM: MHYWV59S73
       ENABLE_APP_SANDBOX: NO
     info:
       path: SnapMyWindows/Info.plist
