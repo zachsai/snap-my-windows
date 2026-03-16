@@ -14,6 +14,10 @@ enum SnapCalculator {
             return CGRect(x: x, y: y, width: w / 2, height: h)
         case .rightHalf:
             return CGRect(x: x + w / 2, y: y, width: w / 2, height: h)
+        case .topHalf:
+            return CGRect(x: x, y: y, width: w, height: h / 2)
+        case .bottomHalf:
+            return CGRect(x: x, y: y + h / 2, width: w, height: h / 2)
         case .topLeft:
             return CGRect(x: x, y: y, width: w / 2, height: h / 2)
         case .topRight:

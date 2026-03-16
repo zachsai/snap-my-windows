@@ -5,7 +5,7 @@ struct MenuBarView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        if !appState.isAccessibilityGranted {
+        if !AccessibilityChecker.isTrusted() {
             Text("Snap My Windows needs Accessibility\naccess to move and resize windows.")
                 .font(.caption)
             Button("Grant Accessibility Access…") {
@@ -24,12 +24,7 @@ struct MenuBarView: View {
         Divider()
 
         Button("Settings…") {
-            if #available(macOS 14.0, *) {
-                NSApp.activate()
-            } else {
-                NSApp.activate(ignoringOtherApps: true)
-            }
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+            appState.openSettings()
         }
 
         Button("Quit") {
@@ -44,6 +39,8 @@ private extension SnapAction {
         switch self {
         case .leftHalf: return .leftArrow
         case .rightHalf: return .rightArrow
+        case .topHalf: return .upArrow
+        case .bottomHalf: return .downArrow
         case .topLeft: return "u"
         case .topRight: return "i"
         case .bottomLeft: return "j"

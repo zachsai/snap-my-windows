@@ -7,7 +7,22 @@
       "Bash(open*)",
       "Bash(ls*)",
       "Bash(which*)",
-      "Bash(brew*)"
+      "Bash(brew*)",
+      "Bash(./scripts/relaunch.sh*)",
+      "Bash(pkill*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "if echo \"$CLAUDE_TOOL_INPUT\" | grep -q 'xcodebuild.*build' && [ \"$CLAUDE_TOOL_EXIT_CODE\" = '0' ]; then ./scripts/relaunch.sh; fi"
+          }
+        ]
+      }
     ]
   }
 }
