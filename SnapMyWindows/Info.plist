@@ -20,5 +20,7 @@
 	<integer>1</integer>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAccessibilityUsageDescription</key>
+	<string>Snap My Windows needs accessibility access to move and resize windows.</string>
 </dict>
 </plist>
