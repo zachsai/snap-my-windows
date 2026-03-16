@@ -60,3 +60,30 @@ axY = primaryScreen.frame.maxY - nsRect.maxY
 **Problem:** macOS may clamp window sizes during a move or resize operation, causing the final frame to differ from what was set.
 
 **Fix:** Set size, then position, then size again to work around OS clamping behavior.
+
+---
+
+## 6. Multiple DerivedData Directories — Stale Binary Trap
+
+**Problem:** Xcode can create multiple `DerivedData/AppName-<hash>/` directories for the same project (e.g., from building via Xcode GUI vs. `xcodebuild` CLI, different workspace configs, or after clearing derived data). Scripts that pick a build using `find | head -1` or alphabetical order may launch a **stale binary** from the wrong directory. You'll iterate on code changes that appear to have no effect because the old binary keeps running.
+
+**Symptoms:**
+- Code changes have zero observable effect after rebuild + relaunch
+- NSLog/print statements you added never appear in logs
+- The bug you "fixed" persists identically across multiple attempts
+
+**Fix:** Always select the DerivedData directory by **most recently modified binary**, not by directory name:
+```bash
+# WRONG — picks alphabetically, may be stale
+find ~/Library/Developer/Xcode/DerivedData/AppName-*/Build/Products/Debug/AppName.app -maxdepth 0 | head -1
+
+# RIGHT — picks the most recently built binary
+ls -t ~/Library/Developer/Xcode/DerivedData/AppName-*/Build/Products/Debug/AppName.app/Contents/MacOS/AppName | head -1 | sed 's|/Contents/MacOS/.*||'
+```
+
+**Prevention:** Periodically clean up stale DerivedData directories:
+```bash
+# List all DerivedData dirs for your project
+ls -ltd ~/Library/Developer/Xcode/DerivedData/AppName-*/
+# Remove stale ones (keep only the most recent)
+```

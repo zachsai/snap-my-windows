@@ -3,6 +3,8 @@ import KeyboardShortcuts
 extension KeyboardShortcuts.Name {
     static let snapLeftHalf = Self("snapLeftHalf", default: .init(.leftArrow, modifiers: [.command, .option]))
     static let snapRightHalf = Self("snapRightHalf", default: .init(.rightArrow, modifiers: [.command, .option]))
+    static let snapTopHalf = Self("snapTopHalf", default: .init(.upArrow, modifiers: [.command, .option]))
+    static let snapBottomHalf = Self("snapBottomHalf", default: .init(.downArrow, modifiers: [.command, .option]))
     static let snapTopLeft = Self("snapTopLeft", default: .init(.u, modifiers: [.command, .option]))
     static let snapTopRight = Self("snapTopRight", default: .init(.i, modifiers: [.command, .option]))
     static let snapBottomLeft = Self("snapBottomLeft", default: .init(.j, modifiers: [.command, .option]))

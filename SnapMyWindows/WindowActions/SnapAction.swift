@@ -3,6 +3,8 @@ import Foundation
 enum SnapAction: String, CaseIterable, Identifiable {
     case leftHalf
     case rightHalf
+    case topHalf
+    case bottomHalf
     case topLeft
     case topRight
     case bottomLeft
@@ -21,6 +23,8 @@ enum SnapAction: String, CaseIterable, Identifiable {
         switch self {
         case .leftHalf: return "Left Half"
         case .rightHalf: return "Right Half"
+        case .topHalf: return "Top Half"
+        case .bottomHalf: return "Bottom Half"
         case .topLeft: return "Top Left"
         case .topRight: return "Top Right"
         case .bottomLeft: return "Bottom Left"

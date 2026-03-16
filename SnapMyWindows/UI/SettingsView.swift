@@ -41,13 +41,25 @@ struct SettingsView: View {
 
             Spacer()
 
-            Image("Logo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 32, height: 32)
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .padding(.horizontal, 16)
-                .padding(.bottom, 4)
+            Button {
+                NSWorkspace.shared.open(URL(string: "https://www.zachsai.com")!)
+            } label: {
+                Image("Logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 32, height: 32)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+            .buttonStyle(.plain)
+            .onHover { hovering in
+                if hovering {
+                    NSCursor.pointingHand.push()
+                } else {
+                    NSCursor.pop()
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 4)
 
             Text("Snap My Windows")
                 .font(.system(size: 10))
